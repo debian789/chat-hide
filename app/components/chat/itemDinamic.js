@@ -12,9 +12,10 @@ export default class ItemDinamic extends React.Component {
 
   componentWillMount () {
     if (this.props.mensaje) {
+      debugger
       let element = <p></p>
       if (this.props.mensaje.split('.').indexOf('jpg') != -1) {
-        element = <img src={this.props.mensaje}/>
+        element = <div className="containerSubItems"><img src={this.props.mensaje}/></div>
       } else if (this.props.mensaje.split('.').indexOf('mp4') != -1) {
         element = <Video controls autoPlay>
           <source src={this.props.mensaje} type="video/mp4"/>
@@ -24,11 +25,12 @@ export default class ItemDinamic extends React.Component {
           <source src={this.props.mensaje} type="video/mp4"/>
         </Video>
       } else if (this.props.mensaje.split('.').indexOf('gif') != -1) {
-        element = <img className="imgMessage" src={this.props.mensaje}/>
+        element = <div className="containerSubItems"><img className="imgMessage" src={this.props.mensaje}/></div>
       } else if (this.props.mensaje.split('.').indexOf('png') != -1) {
-        element = <img className="imgMessage" src={this.props.mensaje}/>
+        debugger
+        element = <div className="containerSubItems"><img className="imgMessage" src={this.props.mensaje}/></div>
       } else if (this.props.mensaje.split('.').indexOf('jpeg') != -1) {
-        element = <img className="imgMessage" src={this.props.mensaje}/>
+        element = <div className="containerSubItems"><img className="imgMessage" src={this.props.mensaje}/></div>
       } else {
         element = <p>{this.props.mensaje}</p>
       }
@@ -38,7 +40,7 @@ export default class ItemDinamic extends React.Component {
 
   render () {
     return <div className={this.props.estiloItem}>
-      {this.state.stateMensaje}
+        {this.state.stateMensaje}
     </div>
   }
 }

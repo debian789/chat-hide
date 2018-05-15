@@ -143,6 +143,8 @@ footer a {
 }
 .video video {
   width: 100%;
+  border: 1px solid #00f;
+  height: 400px;
 }
 .video .video-controls {
   text-align: left;
@@ -201,9 +203,16 @@ footer a {
   color: #ccc;
   text-align: left;
 }
-.itemListChat .itemDinamic img {
-  border: 1px solid #f00;
-  width: 100%;
+.itemListChat .itemDinamic .containerSubItems {
+  width: 88%;
+  height: 100%;
+  text-align: center;
+}
+.itemListChat .itemDinamic .containerSubItems img {
+  height: auto;
+  width: auto;
+  max-width: 88%;
+  max-height: 50%;
 }
 .itemListChat2 {
   padding: 0.3em 1em 0.3em 1em;
@@ -219,9 +228,16 @@ footer a {
   color: #efefef;
   text-align: right;
 }
-.itemListChat2 .itemDinamic img {
-  border: 1px solid #f00;
-  width: 100%;
+.itemListChat2 .itemDinamic .containerSubItems {
+  width: 88%;
+  height: 100%;
+  text-align: center;
+}
+.itemListChat2 .itemDinamic .containerSubItems img {
+  height: auto;
+  width: auto;
+  max-width: 88%;
+  max-height: 50%;
 }
 .contenedorChant {
   display: flex;
