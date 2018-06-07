@@ -1,8 +1,8 @@
-import express from 'express';
-import http from 'http';
-import engine from 'socket.io'
-import multer from 'multer'
-import ext from 'file-extension'
+const express = require('express');
+const http = require('http');
+const engine = require('socket.io')
+const multer = require('multer')
+const ext = require('file-extension')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -13,23 +13,46 @@ const storage = multer.diskStorage({
     }
 });
 
-
 let upload = multer({storage: storage})
-
 
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.use('/public', express.static(__dirname + '/public'));
+// Add headers
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8888');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
+
+app.use('/static', express.static(__dirname + '/build/static'));
+app.use('/build', express.static(__dirname + '/build'));
+app.use('/service-worker.js', express.static(__dirname + '/build/service-worker.js'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 app.post('/upload', upload.single('file'), function (req, res, next) {
-    // es.send(req.file)
     res.json({file: req.file.path});
 })
 
+app.get('/index.html', (req, res) => {
+    res.sendFile(__dirname + '/build/index.html');
+});
+
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/build/index.html');
 });
 
 let server = http.createServer(app).listen(port, () => {

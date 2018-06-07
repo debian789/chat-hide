@@ -20,7 +20,7 @@ export default class InputMensaje extends React.Component {
 
   onClick (event) {
     //13 Corresponde a la tecla Enter
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
       this.sendData(event)
     }
 

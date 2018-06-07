@@ -1,5 +1,7 @@
 import React  from 'react'
-import { Link } from 'react-router'
+import { Link } from "react-router-dom";
+
+
 
 export default class Ingreso extends React.Component {
 
@@ -26,7 +28,7 @@ export default class Ingreso extends React.Component {
   }
 
   handleSala (event) {
-    event.preventDefault
+    event.preventDefault()
     if (event.target.value) {
       this.setState({sala: event.target.value})
     } else {

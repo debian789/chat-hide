@@ -31,11 +31,11 @@ Es necesario hacer unos pequeños ajustes al codigo para iniciarlo, editar el ar
 En la consola ejecutar los siguientes comandos: 
 
 <pre>
-npm install
+yarn install
 
-npm run build 
+yarn build 
 
-npm run start 
+node index.js 
 </pre>
 
 

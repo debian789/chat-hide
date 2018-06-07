@@ -1,5 +1,6 @@
 import React from 'react'
 import ItemListChat from './ItemListChat'
+import { Link } from "react-router-dom";
 
 export default class ListChat extends React.Component {
 
@@ -12,7 +13,7 @@ export default class ListChat extends React.Component {
     return <div className="panelListChat">
       <div className="btnHeader">
         <div className="btnPanic" onClick={this.onClickClear.bind(this)}>Limpiar</div>
-        <a href="#" className="salir">Salir</a>
+        <Link to="/" className="salir">Salir</Link>
       </div>
       {
         this.props.conten.map((dato) => {

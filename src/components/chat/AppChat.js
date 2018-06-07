@@ -3,7 +3,7 @@ import ListChat from './ListChat'
 import InputMensaje from './InputMensaje'
 import uid from 'uid'
 import io from 'socket.io-client'
-import { defaultUrlSocket }  from '../../commons/Constans'
+import { URL_SERVER_SOCKET }  from '../../commons/Constans'
 import request from 'superagent'
 import InputOptions from './inputOptions'
 
@@ -20,11 +20,12 @@ export default class AppChat extends React.Component {
   componentWillMount () {
 
     // Url de escucha de socket.io, el cliente con  el server
-    this.socket = io(defaultUrlSocket)
+    this.socket = io(URL_SERVER_SOCKET)
+    console.log(URL_SERVER_SOCKET)
 
     //Esta pendiente de recibir informacion desde el server
     this.socket.on('mensaje', (mgs) => {
-      if (mgs.user != this.state.user) {
+      if (mgs.user !== this.state.user) {
         this.newMensaje(mgs)
       }
     })
@@ -68,7 +69,7 @@ export default class AppChat extends React.Component {
   sendFile (event) {
     let self = this
     request
-      .post('/upload')
+      .post(`${URL_SERVER_SOCKET}/upload`)
       .attach('file', event.target.files[0])
       .end(function (err, res) {
         if (!err) {
