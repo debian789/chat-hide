@@ -1,0 +1,469 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  background: #01ada8;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: #fff;
+}
+footer a {
+  color: #fff;
+}
+.titulo {
+  text-align: center;
+  font-size: 2em;
+  color: #fff;
+  margin-top: 1em;
+}
+.imgMessage {
+  width: 100%;
+}
+.video video {
+  width: 100%;
+  border: 1px solid #00f;
+  height: 400px;
+}
+.video .video-controls {
+  text-align: left;
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 0;
+  padding: 0;
+}
+.video .video-controls .video-play {
+  display: inline-block;
+  width: 10%;
+  height: 27px;
+}
+.video .video-controls .video-time {
+  width: 100%;
+  text-align: right;
+  display: inline-block;
+}
+.video .video-controls .video-time span {
+  display: inline-block;
+}
+.video .video-controls .video-time .video-time__current {
+  display: none;
+}
+.video .video-controls .video-mute {
+  display: none;
+}
+.video .video-controls .video-seek {
+  width: 80%;
+  display: inline-block;
+}
+.video .video-controls .video-seek .video-progress-bar input {
+  width: 100%;
+}
+.video .video-controls .video-fullscreen {
+  float: right;
+  position: absolute;
+  top: 0;
+  margin-right: 0;
+  right: 0;
+  bottom: 1.5em;
+  width: 8%;
+}
+.itemListChat {
+  padding: 0.3em 1em 0.3em 1em;
+  border-radius: 5px;
+  background: #fff;
+  margin-bottom: 0.5em;
+  width: 80%;
+  text-align: right;
+  margin-left: auto;
+}
+.itemListChat span {
+  display: block;
+  color: #ccc;
+  text-align: left;
+}
+.itemListChat .itemDinamic .containerSubItems {
+  width: 88%;
+  height: 100%;
+  text-align: center;
+}
+.itemListChat .itemDinamic .containerSubItems img {
+  height: auto;
+  width: auto;
+  max-width: 88%;
+  max-height: 50%;
+}
+.itemListChat2 {
+  padding: 0.3em 1em 0.3em 1em;
+  border-radius: 5px 5px 5px 5px;
+  background: #ccc;
+  margin-bottom: 0.5em;
+  width: 80%;
+  text-align: left;
+  margin-right: auto;
+}
+.itemListChat2 span {
+  display: block;
+  color: #efefef;
+  text-align: right;
+}
+.itemListChat2 .itemDinamic .containerSubItems {
+  width: 88%;
+  height: 100%;
+  text-align: center;
+}
+.itemListChat2 .itemDinamic .containerSubItems img {
+  height: auto;
+  width: auto;
+  max-width: 88%;
+  max-height: 50%;
+}
+.contenedorChant {
+  display: flex;
+  border: 0px solid #00f;
+  background: #01ada8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.contenedorChant .cuadroChat {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin: auto;
+  border: 1px solid #eee;
+  width: 50%;
+  display: flex;
+  flex-direction: column-reverse;
+  min-height: 70%;
+  background: #eee;
+}
+.contenedorChant .cuadroChat .panelListChat {
+  bottom: 3.2em;
+  left: 1em;
+  padding-left: 10px;
+  padding-right: 10px;
+  right: 1em;
+  color: #222;
+  margin-bottom: 80px;
+  background: #eee;
+}
+.contenedorChant .cuadroChat .panelListChat .btnHeader {
+  position: fixed;
+  top: 0;
+  padding: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 50%;
+  box-shadow: 0px 1px 10px #717d7e;
+}
+.contenedorChant .cuadroChat .panelListChat .btnHeader .btnPanic {
+  padding-bottom: 6px;
+  padding-top: 6px;
+  text-align: center;
+  width: 50%;
+  cursor: pointer;
+  display: inline-block;
+  background: #ec7063;
+  color: #fff;
+}
+.contenedorChant .cuadroChat .panelListChat .btnHeader .salir {
+  cursor: pointer;
+  right: 0;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  display: inline-block;
+  background: #5dade2;
+  text-align: center;
+  width: 50%;
+  color: #fff;
+}
+.inputChat {
+  position: fixed;
+  width: 50%;
+  display: inline-block;
+}
+.inputChat input:hover {
+  border: 0px solid #00f;
+}
+.inputChat input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.inputChat input {
+  padding: 0;
+  width: 88%;
+  height: 40px;
+  bottom: 0;
+  margin: 0;
+  border: 0;
+  float: left;
+  text-align: left;
+  padding-left: 2%;
+  box-shadow: none;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  line-height: 3em;
+}
+.inputChat button:hover {
+  border: 0;
+}
+.inputChat button:focus {
+  border: 0;
+  outline: none;
+}
+.inputChat button {
+  color: #4a8bff;
+  padding: 0;
+  font-size: 30px;
+  float: right;
+  right: 0;
+  height: 40px;
+  width: 10%;
+  border: 0;
+  background: #fff;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 3em;
+  font-size: 2em;
+  color: #e0c737;
+}
+.inicioSession {
+  border: 1px solid #fff;
+  border-radius: 2px;
+  background: #e4e8eb;
+  box-shadow: 4px 5px 0px #06a29f;
+  width: 30%;
+  margin: 3em auto;
+  padding: 1em 2em 2em 2em;
+}
+.inicioSession input[type=text] {
+  width: 96%;
+  display: inline-block;
+  border-radius: 6px;
+  padding: 0 0 0 4%;
+  border: 0;
+  font-size: 1em;
+  color: #b4b8bb;
+  line-height: 3em;
+  margin-bottom: 0.5em;
+}
+.inicioSession input[type=text]:focus {
+  outline: none;
+}
+.inicioSession input[type=text]:placeholder {
+  color: #f00;
+}
+.inicioSession button {
+  display: inline-block;
+  width: 100%;
+  border-radius: 6px;
+  border: 0;
+  line-height: 2.4em;
+  padding: 0;
+  margin-top: 0.5em;
+  background: #01ada8;
+  color: #f6fefa;
+  font-size: 1.2em;
+}
+.inicioSession button:focus {
+  outline: none;
+}
+.inicioSession .validacionName {
+  display: block;
+  margin-top: 0.5em;
+  color: #019f9b;
+}
+.inputOption {
+  position: fixed;
+  bottom: 2.5em;
+  width: 50%;
+  height: 2em;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+}
+.inputOption label {
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+  color: #fff;
+  width: 50%;
+  background: #01ada8;
+  margin: 0 5px 0 5px;
+  padding: 0.5em 5px 0.5em 5px;
+  text-align: center;
+}
+.inputOption input[type=file] {
+  display: none;
+}
+@media all and (max-width: 700px) {
+  .contenedorChant .cuadroChat {
+    width: 100%;
+  }
+  .contenedorChant .cuadroChat .inputChat {
+    width: 100%;
+  }
+  .contenedorChant .cuadroChat .inputChat input {
+    width: 80%;
+  }
+  .contenedorChant .cuadroChat .inputChat button {
+    width: 18%;
+  }
+  .titulo {
+    font-size: 25px;
+    width: 100%;
+  }
+  .inicioSession {
+    width: 80%;
+    padding: 5%;
+  }
+  .inicioSession input[type=text] {
+    width: 95%;
+  }
+  .inicioSession button {
+    width: 100%;
+  }
+  .inputOption {
+    width: 100%;
+  }
+  .btnHeader {
+    width: 100% !important;
+  }
+}

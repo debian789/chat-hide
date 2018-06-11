@@ -1,5 +1,8 @@
 import React from 'react'
-import { default as Video } from 'react-html5video'
+// import { default as Video } from 'react-html5video'
+import { DefaultPlayer as Video } from 'react-html5video';
+import 'react-html5video/dist/styles.css';
+
 //import { default as Video, Controls, Play, Mute, Seek, Fullscreen, Time, Overlay } from 'react-html5video'
 export default class ItemDinamic extends React.Component {
 
@@ -13,16 +16,18 @@ export default class ItemDinamic extends React.Component {
 
   componentWillMount () {
     if (this.props.mensaje) {
-      debugger
       let element = <p></p>
       if (this.props.mensaje.split('.').indexOf('jpg') !== -1) {
         element = <div className="containerSubItems"><img alt="img" src={this.props.mensaje}/></div>
       } else if (this.props.mensaje.split('.').indexOf('mp4') !== -1) {
-        element = <Video controls autoPlay>
+        debugger
+        element = <Video autoPlay loop muted
+        controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
           <source src={this.props.mensaje} type="video/mp4"/>
         </Video>
       } else if (this.props.mensaje.split('.').indexOf('m4v') !== -1) {
-        element = <Video controls autoPlay>
+        element = <Video autoPlay loop muted
+        controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
           <source src={this.props.mensaje} type="video/mp4"/>
         </Video>
       } else if (this.props.mensaje.split('.').indexOf('gif') !== -1) {

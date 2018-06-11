@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import './index.css';
+import './css/estilo.css'
 // import Router from './components/Router.js';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
