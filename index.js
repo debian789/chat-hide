@@ -26,6 +26,7 @@ app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
+     res.setHeader('Access-Control-Allow-Origin', 'http://192.168.1.111:3001');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -47,7 +48,7 @@ app.use('/service-worker.js', express.static(__dirname + '/build/service-worker.
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 app.post('/upload', upload.single('file'), function (req, res, next) {
-    res.json({file: req.protocol + '://'+ req.get('host') + '/'+ req.file.path});
+    res.json({file: req.file.path});
 })
 
 app.get('/index.html', (req, res) => {
