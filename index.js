@@ -3,12 +3,15 @@ const http = require('http');
 const engine = require('socket.io')
 const multer = require('multer')
 const ext = require('file-extension')
+const url = require('url')
+
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './uploads')
     },
     filename: function (req, file, cb) {
+
         cb(null, +Date.now() + '.' + ext(file.originalname))
     }
 });
@@ -44,7 +47,7 @@ app.use('/service-worker.js', express.static(__dirname + '/build/service-worker.
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 app.post('/upload', upload.single('file'), function (req, res, next) {
-    res.json({file: req.file.path});
+    res.json({file: req.protocol + '://'+ req.get('host') + '/'+ req.file.path});
 })
 
 app.get('/index.html', (req, res) => {
