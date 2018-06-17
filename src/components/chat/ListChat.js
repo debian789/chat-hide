@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 export default class ListChat extends React.Component {
 
   onClickClear (evento) {
-    this.props.onClearMessage.call(null, 'message')
+    // this.props.onClearMessage.call(null, 'message')
   }
 
   render () {
 
     return <div className="panelListChat">
       <div className="btnHeader">
-        <div className="btnPanic" onClick={this.onClickClear.bind(this)}>Limpiar</div>
+        <div className="btnPanic" onClick={this.onClickClear.bind(this)}>Chat</div>
         <Link to="/" className="salir">Salir</Link>
       </div>
       {

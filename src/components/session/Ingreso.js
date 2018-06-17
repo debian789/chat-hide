@@ -46,7 +46,10 @@ export default class Ingreso extends React.Component {
 
   render () {
     return <div>
-      <h1>Chat</h1>
+      <div className="containerLogo">
+        <img className="logo" src="img/logo.png"/>
+      </div>
+      <h1>Chat incógnito</h1>
       <div className="inicioSession">
         <input type="text" placeholder="Nombre" onChange={this.handleChange}/>
         <input type="text" placeholder="Palabra clave" onChange={this.handleSala}/>

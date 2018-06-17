@@ -3,12 +3,14 @@ import React from 'react'
 export default class InputMensaje extends React.Component {
 
   sendData (event) {
-    if (event.target.value) {
+    if (event.target.value) {      
       this.props.onSendMensaje.call(null, {mensaje: event.target.value})
       event.target.value = ''
     } else {
-      this.props.onSendMensaje.call(null, {mensaje: this.textInput.value})
-      this.textInput.value = ''
+      if (this.textInput.value) {
+        this.props.onSendMensaje.call(null, {mensaje: this.textInput.value})
+        this.textInput.value = ''
+      }
     }
 
   }
@@ -23,14 +25,13 @@ export default class InputMensaje extends React.Component {
     if (event.keyCode === 13) {
       this.sendData(event)
     }
-
   }
 
   render () {
     return <div className="inputChat">
       <input
         type="text"
-        placeholder="Escribe un mensaje..."
+        placeholder="Aa ... "
         onKeyDown={this.onClick.bind(this)}
         ref={(input) => {
           this.textInput = input
